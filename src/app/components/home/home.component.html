@@ -1,0 +1,32 @@
+<section class="searchbox">
+    <div class="container logo">Logo</div>
+    <div class="container">
+    <form class="searchform" [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="outline">
+        <mat-label>Search for design artists</mat-label>
+        <input matInput [formControl]="searchTerm" formControlName="term" placeholder="Search an Artist by Name" [matAutocomplete]="auto">
+        <mat-hint>Search an Artist by name</mat-hint>
+        <mat-autocomplete #auto="matAutocomplete">
+            <mat-option class="autocompleteItem" *ngFor="let name of names" [value]="name.name">
+            {{name.name}}
+            </mat-option>
+        </mat-autocomplete>
+        </mat-form-field>
+        <button mat-stroked-button color="primary">
+        <mat-icon>search</mat-icon>
+        </button>
+    </form>
+    </div>
+</section>
+<section class="middleWrapper">
+    <aside class="aside">
+        <app-facets class="facetsWrapper" [countries]="countries" [styles]="facets" [chips]="chipsList" (updatedChips)="updatedChipsHandler($event)" (updatedRt)="updatedRatingHandler($event)" (updatedCountry)="updatedCountryHandler($event)"></app-facets>
+    </aside>
+    <section class="resultsbox">
+    <app-chips [chips]="chipsList" (updatedChips)="updatedChipsHandler($event)"></app-chips>
+    <h2 class="subtitle" *ngIf="noresults">Results</h2>
+    <h2 class="subtitle" *ngIf="!noresults && artists.length === 0">Find an artist in our network</h2>
+    <mat-progress-bar *ngIf="isLoading" mode="indeterminate"></mat-progress-bar>
+    <app-artist-tile [artists]="artists" [noresults]="noresults" [isMultiple]="isMultiple"></app-artist-tile>
+    </section>
+</section>

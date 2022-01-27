@@ -1,0 +1,8 @@
+<div class="detailWrapper">
+    <a [routerLink]="['/']" class="breadcrumb">< Go Back</a>
+    <app-artist-tile [artist]="artist" [ratingAvg]="ratingAvg" [isMultiple]="isMultiple">
+    </app-artist-tile>
+    <mat-progress-bar *ngIf="isLoading" mode="query"></mat-progress-bar>
+    <app-comment [comments]="comments"></app-comment>
+</div>
+

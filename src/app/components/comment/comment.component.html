@@ -1,0 +1,7 @@
+<ul>
+    <li class="comment" *ngFor="let comment of comments">
+        <h3>Comment left by: {{comment.client_name}}</h3>
+        <p>{{comment.comment}}</p>
+        <!-- <mat-chip class="example-box">Rating: {{comment.rating.$numberDouble}}</mat-chip> -->
+    </li>
+</ul>

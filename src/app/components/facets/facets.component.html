@@ -1,0 +1,35 @@
+<div class="facetBox styles">
+  <h4 class="smalltitle">Filter by design style:</h4>
+  {{ selectedStyles }}
+  <ul class="facetsWrapper categories genres">
+      <li class="facetItem" *ngFor="let style of styles">
+          <mat-checkbox [id]="style" [name]="style" (change)="onFacetChecked($event)" class="example-margin">{{style}}</mat-checkbox>
+      </li>
+  </ul>
+</div>
+<div class="facetsBoxWrapper">
+  <div class="facetBox">
+    <h4 class="smalltitle">Select min rating:</h4>
+    <mat-slider
+      thumbLabel
+      [displayWith]="formatSliderLabel"
+      tickInterval="1"
+      step="1"
+      min="1"
+      max="10"
+      aria-label="units"
+      (change)="onSliderChange($event)">
+    </mat-slider>
+  </div>
+  <div class="facetBox">
+    <ul class="facetsWrapper categories countries">
+        <mat-form-field appearance="fill">
+            <mat-label>Filter by country</mat-label>
+            <mat-select [(value)]="selectedCountry" (selectionChange)="onFacetSelected()">
+              <mat-option>None</mat-option>
+              <mat-option *ngFor="let country of countries" [value]="country">{{country}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+    </ul>
+  </div>
+</div>

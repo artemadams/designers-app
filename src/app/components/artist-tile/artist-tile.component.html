@@ -1,0 +1,54 @@
+<section class="tiles-listWrapper" *ngIf="isMultiple">
+  <ul class="artist-tiles grid" *ngIf="artists && artists.length > 0">
+    <li class="artist-tile" *ngFor="let artist of artists">
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>{{ artist.name }}</mat-card-title>
+          <mat-card-subtitle
+            >Joined: {{ convertDate(artist.joined_network) }}</mat-card-subtitle
+          >
+        </mat-card-header>
+        <img
+          mat-card-image
+          src="{{ artistImage(artist) }}"
+          alt="{{ artist.name }}"
+        />
+        <mat-card-content>
+          Artist styles:
+          {{ artist.styles }}
+        </mat-card-content>
+        <mat-card-actions>
+          <!-- <button mat-button [routerLink]="['/artist/' + parseTitle(artist.title)]">See more</button> -->
+          <button mat-button [routerLink]="['/artist/' + artist.slug]">
+            See more
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </li>
+  </ul>
+  <div *ngIf="noresults" class="notification error">
+    <p>Your search returned no results. Please try again!</p>
+  </div>
+</section>
+<section class="single-tileWrapper" *ngIf="!isMultiple && artist">
+  <mat-card class="example-card">
+    <div class="card-body">
+      <img
+        mat-card-image
+        src="{{ artistImage(artist) }}"
+        alt="{{ artist.name }}"
+      />
+      <mat-card-content>
+        <mat-accordion>
+          <mat-card-title>{{ artist.name }}</mat-card-title>
+          <mat-card-subtitle> Styles: {{ artist.styles }}</mat-card-subtitle>
+          <p>Country: {{ artist.country }}</p>
+          <p>Accepted payment method: {{ artist.payment_method }}</p>
+          <p>Email: {{ artist.email }}</p>
+          <p>Average Rating: {{ ratingAvg }}</p>
+        </mat-accordion>
+      </mat-card-content>
+    </div>
+  </mat-card>
+</section>

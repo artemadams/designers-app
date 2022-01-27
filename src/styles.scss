@@ -1,0 +1,200 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color: #252222; color: #FFFFFF; }
+
+.main {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.middleWrapper {
+    display: block;
+
+    @media screen and (min-width: 768px) {
+        display: grid;
+        grid-template-columns: 30% 70%;
+    }
+}
+
+li {
+    list-style-type: none;
+}
+
+.comment {
+    padding: 20px 0;
+    border-top: 1px solid rgb(68, 68, 73)
+}
+
+.facetItem {
+    list-style-type: none;
+}
+
+// aside (filters and facets)
+.facetsBoxWrapper {
+    display: flex;
+    flex-direction: row;
+
+    @media screen and (min-width: 768px) {
+        display: block;
+    }
+}
+
+.facetBox:not(.styles) {
+    min-width: 50%;
+}
+
+.facets {
+    &Items {
+        list-style-type: none;
+    }
+}
+// searchbox
+.searchbox,
+.resultsbox {
+    min-height: 100px;
+    width: 90%;
+    margin: 0 auto;
+    
+}
+
+.card-body {
+    display: grid;
+    grid-template-columns: 20% 80%;
+    grid-gap: 50px;
+}
+
+.resultsbox {
+    border-top: 1px solid lightgrey;
+}
+
+.searchbox {
+    padding-bottom: 50px;
+}
+
+// global containers
+.container {
+    display: flex;
+
+    &.logo {
+        margin: 100px 0 30px;
+    }
+}
+
+// searchbox
+.resultsbox {
+    min-height: 100px;
+}
+
+// overrride mat-elements
+.mat-form-field {
+    width: 100%;
+}
+
+.mat-card-title {
+    min-height: 50px;
+    font-size: 25px;
+}
+
+.mat-button.mat-primary {
+    height: 60px;
+}
+
+.mat-card-avatar {
+    display: none;
+}
+
+.mat-stroked-button.mat-primary {
+    height: 60px;
+}
+
+.mat-card-header-text {
+    padding: 0;
+}
+
+.mat-checkbox-inner-container {
+    width: 25px !important;
+    height: 25px !important;
+}
+
+.mat-checkbox-label {
+    line-height: 35px !important;
+}
+
+.mat-typography {
+    h2 { margin-top: 16px; }
+    p { margin: 0 50px 12px 0; }
+}
+
+.mat-chip-list-wrapper {
+    padding: 20px 0;
+}
+
+.mat-standard-chip .mat-chip-remove,
+.mat-standard-chip .mat-chip-trailing-icon {
+    margin-left: 0 !important;
+}
+
+.mat-accent .mat-slider-focus-ring {
+    background-color: rgb(186 217 173 / 20%);
+}
+
+.mat-checkbox-frame {
+    border-width: 1px !important;
+}
+
+.grid {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+
+    @media screen and (min-width: 600px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media screen and (min-width: 1024px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.movie-tile {
+    list-style: none;
+    list-style-type: none;
+}
+
+// spinner
+.mat-progress-spinner {
+    margin: 30px auto;
+
+    circle {
+        stroke: #daf6e7
+    }
+}
+
+.mat-slider-wrapper{
+    width: 200px;
+}
+
+// override browser
+ul {
+    padding-inline-start: 0;
+
+    &.countries {
+        .mat-form-field-wrapper {
+            width: 200px;
+        }
+    }
+}
+
+form {
+    width: 90%;
+    display: flex;
+}
+
+h3 {
+    text-decoration: underline;
+}
+
+p {
+    color:rgb(211, 236, 208)
+}
