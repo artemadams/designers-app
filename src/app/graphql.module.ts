@@ -5,8 +5,9 @@ import { HttpLink } from 'apollo-angular/http';
 import { setContext } from '@apollo/client/link/context';
 import * as Realm from 'realm-web';
 
-const APP_ID = '<YOUR-APP-ID>';
-const uri = '<YOUR-GRAPHQL-ENDPOINT>';
+const APP_ID = 'designers-app-mzpkz';
+const uri =
+  'https://eu-west-1.aws.realm.mongodb.com/api/client/v2.0/app/designers-app-mzpkz/graphql';
 
 const realmApp = new Realm.App(APP_ID);
 

@@ -7,7 +7,10 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
-import { MatFormFieldModule, MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
+import {
+  MatFormFieldModule,
+  MAT_FORM_FIELD_DEFAULT_OPTIONS,
+} from '@angular/material/form-field';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatSelectModule } from '@angular/material/select';
@@ -25,7 +28,6 @@ import { FacetsComponent } from './components/facets/facets.component';
 import { ChipsComponent } from './components/chips/chips.component';
 import { ArtistDetailComponent } from './components/artist-detail/artist-detail.component';
 import { CommentComponent } from './components/comment/comment.component';
-import { ScullyLibModule } from '@scullyio/ng-lib';
 import { GraphQLModule } from './graphql.module';
 
 @NgModule({
@@ -58,15 +60,14 @@ import { GraphQLModule } from './graphql.module';
     MatProgressSpinnerModule,
     MatProgressBarModule,
     MatChipsModule,
-    ScullyLibModule,
-    GraphQLModule
+    GraphQLModule,
   ],
   providers: [
     {
-      provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, 
-      useValue: {appearance: 'fill'}
-    }
+      provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
+      useValue: { appearance: 'fill' },
+    },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
